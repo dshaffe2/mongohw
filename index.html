@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="headline text-center">
+      <h2>Mission to Mars</h2>
+      <p><a class="btn btn-primary btn-md" href="/scrape" role="button">The Scraper</a></p>
+    </div>
+
+    <div class="row" >
+      <div class="col-md-12">
+        <h2>Latest News</h2>
+        <h3 class="heading">{{data.nasa.title}} </h3>
+        <p>{{data.nasa.title}} {{data.nasa.paragraph}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+          <h2>Featured Mars Image</h2>
+          <img src={{data.nasa_image.url}} alt="Mars">
+        </div>
+
+        <div class="col-md-12">
+            <h3>Current Weather on Mars</h3>
+            <p>{{data.mars_weather.weather}}</p>
+            <h3>Mars Facts</h3>
+          {{data.facts}}
+        </div>
+    </div>
+
+    <div class="row" id="pictures">
+      <div class="col-md-12">
+        <h2 class="text-center">Mars Hemispheres</h2>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-6">
+          <figure id="pictures">
+            <img src={{data['hemisphere'][0]['image_url']}} alt="picture1" style="width:100%">
+            <figcaption>{{data['hemisphere'][0]['title']}}</figcaption>
+          </figure>
+        </div>
+        <div class="col-md-6">
+          <figure id="pictures">
+            <img src={{data['hemisphere'][1]['image_url']}} alt="picture2" style="width:100%">
+            <figcaption>{{data['hemisphere'][1]['title']}}</figcaption>
+            </figure>
+        </div>
+      </div>
+      </div>
+        <div class="row" >
+          <div class="col-md-12">
+            <div class="col-md-6">
+              <figure>
+                <img src={{data['hemisphere'][2]['image_url']}} alt="picture3" style="width:100%">
+                <figcaption>{{data['hemisphere'][2]['title']}}</figcaption>
+              </figure>
+            </div>
+          <div class="col-md-6">
+            <figure>
+              <img src={{data['hemisphere'][3]['image_url']}} alt="picture4" style="width:100%">
+                <figcaption>{{data['hemisphere'][3]['title']}}</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
